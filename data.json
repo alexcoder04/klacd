@@ -1,0 +1,24 @@
+{
+    "exams": [
+        {
+            "name": "KommTech",
+            "id": "kommtech",
+            "time": 1773820800
+        },
+        {
+            "name": "HÖMA3",
+            "id": "hm3",
+            "time": 1771920000
+        },
+        {
+            "name": "NuMa",
+            "id": "numa",
+            "time": 1773216000
+        },
+        {
+            "name": "ET3",
+            "id": "et3",
+            "time": 1774609200
+        }
+    ]
+}
