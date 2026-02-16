@@ -56,7 +56,7 @@ async function fetchExams(url) {
     }));
 }
 
-fetchExams("/data.json").then(exams => {
+fetchExams("data.json").then(exams => {
     sortByKey(exams, "time");
     exams.forEach(e => {
         if (e.time * 1000 < Date.now()) {
