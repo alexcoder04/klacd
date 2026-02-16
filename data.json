@@ -26,6 +26,21 @@
             "time": 1773043200
         },
         {
+            "name": "ET1 T1",
+            "id": "et1",
+            "time": 1772611200
+        },
+        {
+            "name": "HÖMA1 T2",
+            "id": "hm1t2",
+            "time": 1774854000
+        },
+        {
+            "name": "Management",
+            "id": "manage",
+            "time": 1772199000
+        },
+        {
             "name": "EDEW",
             "id": "edew",
             "time": 1772622000
