@@ -19,6 +19,16 @@
             "name": "ET3",
             "id": "et3",
             "time": 1774609200
+        },
+        {
+            "name": "GEMB2",
+            "id": "gemb2",
+            "time": 1773043200
+        },
+        {
+            "name": "EDEW",
+            "id": "edew",
+            "time": 1772622000
         }
     ]
 }
