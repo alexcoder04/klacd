@@ -1,18 +1,4 @@
 
-function unixToGerman(unixSeconds) {
-    const d = new Date(unixSeconds * 1000);
-
-    const pad = n => String(n).padStart(2, "0");
-
-    const day = pad(d.getDate());
-    const month = pad(d.getMonth() + 1);
-    const year = d.getFullYear();
-    const hours = pad(d.getHours());
-    const minutes = pad(d.getMinutes());
-
-    return `${day}.${month}.${year} ${hours}:${minutes}`;
-}
-
 function sortByKey(arr, key, ascending = true) {
     return arr.sort((a, b) => {
         if (a[key] < b[key]) return ascending ? -1 : 1;
@@ -21,15 +7,20 @@ function sortByKey(arr, key, ascending = true) {
     });
 }
 
-function timeUntil(unixTimestamp) {
+function unixToStr(unixSecs) {
+    const d = new Date(unixSecs * 1000);
+    const pad = n => String(n).padStart(2, "0");
+    return `${pad(d.getDate())}.${pad(d.getMonth())}.${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+function timeUntilStr(unixSecs) {
     const now = Date.now();
 
-    if (now >= unixTimestamp * 1000) {
+    if (now >= unixSecs * 1000) {
         return "Bereits vergangen";
     }
 
-    let diff = Math.max(0, unixTimestamp * 1000 - now);
-
+    const diff = Math.max(0, unixSecs * 1000 - now);
     const secondsTotal = Math.floor(diff / 1000);
 
     const days = Math.floor(secondsTotal / 86400);
@@ -71,7 +62,7 @@ fetchExams("data.json").then(exams => {
 
         const dateTd = document.createElement("td");
         dateTd.id = `${e.id}-date`;
-        dateTd.textContent = unixToGerman(e.time);
+        dateTd.textContent = unixToStr(e.time);
 
         const countdownTd = document.createElement("td");
         countdownTd.id = `${e.id}-countdown`;
@@ -83,7 +74,7 @@ fetchExams("data.json").then(exams => {
         document.getElementById("exams-table").appendChild(tr);
 
         setInterval(() => {
-            document.getElementById(`${e.id}-countdown`).innerText = timeUntil(e.time);
+            document.getElementById(`${e.id}-countdown`).innerText = timeUntilStr(e.time);
         }, 1000);
     });
 })
