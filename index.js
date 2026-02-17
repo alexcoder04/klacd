@@ -10,7 +10,7 @@ function sortByKey(arr, key, ascending = true) {
 function unixToStr(unixSecs) {
     const d = new Date(unixSecs * 1000);
     const pad = n => String(n).padStart(2, "0");
-    return `${pad(d.getDate())}.${pad(d.getMonth())}.${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    return `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
 function timeUntilStr(unixSecs) {
